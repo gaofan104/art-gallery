@@ -1,0 +1,40 @@
+{{page-title "Home"}}
+
+<div class="grid">
+    {{#each @model as |artwork|}}
+    <div class="cell">
+        {{artwork.title}} <br>
+        <img src="https://www.artic.edu/iiif/2/{{artwork.image_id}}/full/843,/0/default.jpg" alt="" width="50"
+            height="50" />
+    </div>
+    {{/each}}
+</div>
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+    <a href="#" class="pagination-previous" {{on "click" (fn this.goToPreviousPage) }}>Previous</a>
+    <a href="#" class="pagination-next" {{on "click" (fn this.goToNextPage) }}>Next page</a>
+    <ul class="pagination-list">
+        {{#unless this.isFirstPage}}
+        <li>
+            <a href="#" class="pagination-link" aria-label="Goto page 1" {{on "click" (fn this.goToPage 1) }}>1</a>
+        </li>
+        <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+        </li>
+        {{/unless }}
+        <li>
+            <a class="pagination-link is-current" aria-label="Page {{@model.meta.current_page}}"
+                aria-current="page">{{@model.meta.current_page}}</a>
+        </li>
+        {{#unless this.isLastPage}}
+        <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+        </li>
+        <li>
+            <a href="#" class="pagination-link" aria-label="Goto page {{@model.meta.total_pages}}" {{on "click" (fn
+                this.goToPage @model.meta.total_pages) }}>{{@model.meta.total_pages}}</a>
+        </li>
+        {{/unless }}
+    </ul>
+</nav>
+{{outlet}}
