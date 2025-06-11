@@ -1,5 +1,9 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 .cell {
-    max-height: 150px;
+    max-height: 300px;
     overflow: auto;
+}
+
+.page {
+    padding: 20px;
 }

@@ -1,0 +1,9 @@
+{{page-title "ArtworkDetails"}}
+<div class="page">
+    <h1 class="title">{{ @model.title }}</h1>
+    <img src="https://www.artic.edu/iiif/2/{{@model.image_id}}/full/843,/0/default.jpg" alt="" width="500"
+        height="500" />
+    <p>Artist: {{ @model.artist_display}}</p>
+    <p>Date: {{ @model.timestamp}}</p>
+</div>
+{{outlet}}

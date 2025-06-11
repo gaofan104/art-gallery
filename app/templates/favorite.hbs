@@ -1,0 +1,14 @@
+{{page-title "Favorite"}}
+<div class="grid">
+    {{#each-in @model as |category artworks|}}
+    <h3>{{category}}</h3>
+    {{#each artworks as |artwork|}}
+    <div class="cell">
+        <LinkTo @route="artwork-details" @model={{artwork}}>{{artwork.title}}</LinkTo> <br>
+        <img src="https://www.artic.edu/iiif/2/{{artwork.image_id}}/full/843,/0/default.jpg" alt="" width="50"
+            height="50" />
+    </div>
+    {{/each}}
+    {{/each-in}}
+</div>
+{{outlet}}

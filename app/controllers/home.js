@@ -13,11 +13,11 @@ export default class HomeController extends Controller {
     @tracked page = 1;
 
     get isFirstPage() {
-        return this.get('model').meta.current_page == 1;
+        return this.model.meta.current_page == 1;
     }
 
     get isLastPage() {
-        return this.get('model').meta.current_page == this.get('model').meta.total_pages;
+        return this.model.meta.current_page == this.model.meta.total_pages;
     }
 
     @action
