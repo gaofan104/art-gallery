@@ -6,11 +6,14 @@ export default class FavoriteRoute extends Route {
     @service('artwork') artworkService;
 
     model() {
+        // group artwork by categories
         return this.artworkService.favorites.reduce((categories, artwork) => {
-            if (!categories.has(artwork.category)) {
-                categories.set(artowrk.category, []);
-            }
-            categories.get(artwork.category).push(artwork);
+            artwork.category_titles.forEach((category) => {
+                if (!categories.has(category)) {
+                    categories.set(category, []);
+                }
+                categories.get(category).push(artwork);
+            })
             return categories;
         }, new Map());
     }

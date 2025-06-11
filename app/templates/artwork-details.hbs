@@ -3,11 +3,16 @@
     <h1 class="title">{{ @model.title }}</h1>
     <img src="https://www.artic.edu/iiif/2/{{@model.image_id}}/full/843,/0/default.jpg" alt="" width="500"
         height="500" />
-    <p>Artist: {{ @model.artist_display}}</p>
-    <p>Date: {{ @model.timestamp}}</p>
+    <p>Artist: {{ @model.artist_display }}</p>
+    <p>Date: {{ @model.timestamp }}</p>
+
+    <div>
+        <h3>Description:</h3>
+        {{{ @model.description }}}
+    </div>
 
     <a class={{if this.isFavorite 'material-symbols-outlined red' 'material-symbols-outlined' }} {{on "click"
-        this.addToFavorite }}>
+        this.onClickFavorite }}>
         favorite
     </a>
 

@@ -10,7 +10,11 @@ export default class ArtworkDetailsController extends Controller {
     }
 
     @action
-    addToFavorite() {
-        this.artworkService.addFavorite(this.model);
+    onClickFavorite() {
+        if (this.isFavorite) {
+            this.artworkService.removeFavorite(this.model);
+        } else {
+            this.artworkService.addFavorite(this.model);
+        }
     }
 }
