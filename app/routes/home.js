@@ -1,6 +1,5 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
-import { hash } from 'rsvp';
 
 export default class HomeRoute extends Route {
     @service('artwork') artworkService;

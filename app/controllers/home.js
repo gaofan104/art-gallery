@@ -1,8 +1,6 @@
 import Controller from '@ember/controller';
 import { service } from '@ember/service';
 import { action } from '@ember/object';
-import { alias } from '@ember/object/computed';
-import EmberObject, { computed } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class HomeController extends Controller {

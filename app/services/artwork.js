@@ -1,6 +1,5 @@
 import Service from '@ember/service';
 import { service } from '@ember/service';
-import { tracked } from '@glimmer/tracking';
 import { TrackedArray } from 'tracked-built-ins';
 
 export default class ArtworkService extends Service {
@@ -17,7 +16,6 @@ export default class ArtworkService extends Service {
 
     addFavorite(item) {
         this.favorites.push(item);
-        console.log(this.favorites);
 
     }
 
