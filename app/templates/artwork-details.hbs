@@ -5,5 +5,12 @@
         height="500" />
     <p>Artist: {{ @model.artist_display}}</p>
     <p>Date: {{ @model.timestamp}}</p>
+
+    <a class={{if this.isFavorite 'material-symbols-outlined red' 'material-symbols-outlined' }} {{on "click"
+        this.addToFavorite }}>
+        favorite
+    </a>
+
+
 </div>
 {{outlet}}

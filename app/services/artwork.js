@@ -1,11 +1,13 @@
 import Service from '@ember/service';
 import { service } from '@ember/service';
+import { tracked } from '@glimmer/tracking';
+import { TrackedArray } from 'tracked-built-ins';
 
 export default class ArtworkService extends Service {
     @service store;
 
-    favorites = []; // temporary stored in memory for demo purpose
-    history = [];
+    favorites = new TrackedArray([]); // temporary stored in memory for demo purpose
+    history = new TrackedArray([]);
 
     async fetchArtworks(page=1, limit=25) {
         this.store.unloadAll('artwork');

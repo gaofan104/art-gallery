@@ -1,11 +1,14 @@
 {{page-title "History"}}
-<div class="grid">
-    {{#each @model as |artwork|}}
-    <div class="cell">
-        <LinkTo @route="artwork-details" @model={{artwork}}>{{artwork.title}}</LinkTo> <br>
-        <img src="https://www.artic.edu/iiif/2/{{artwork.image_id}}/full/843,/0/default.jpg" alt="" width="50"
-            height="50" />
+<div class="page">
+    <h1 class="title"> History </h1>
+    <div class="grid">
+        {{#each @model as |artwork|}}
+        <div class="cell">
+            <LinkTo @route="artwork-details" @model={{artwork}}>{{artwork.title}}</LinkTo> <br>
+            <img src="https://www.artic.edu/iiif/2/{{artwork.image_id}}/full/843,/0/default.jpg" alt="" width="50"
+                height="50" />
+        </div>
+        {{/each}}
     </div>
-    {{/each}}
 </div>
 {{outlet}}
