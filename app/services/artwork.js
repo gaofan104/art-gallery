@@ -17,6 +17,8 @@ export default class ArtworkService extends Service {
 
     addFavorite(item) {
         this.favorites.push(item);
+        console.log(this.favorites);
+
     }
 
     removeFavorite(item) {
