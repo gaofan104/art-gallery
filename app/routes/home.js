@@ -12,7 +12,7 @@ export default class HomeRoute extends Route {
         }
     };
 
-    model(params) {
-        return this.store.query('artwork', { page: params.page || 1, limit: 25 });
+    async model(params) {
+        return  this.store.query('artwork', { page: params.page || 1, limit: 25 });
     }
 }

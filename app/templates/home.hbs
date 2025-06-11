@@ -25,12 +25,12 @@
     </div>
 
     <nav class="pagination" role="navigation" aria-label="pagination">
-        <a href="#" class="pagination-previous" {{on "click" this.goToPreviousPage }}>Previous</a>
-        <a href="#" class="pagination-next" {{on "click" this.goToNextPage }}>Next page</a>
+        <a class="pagination-previous" {{on "click" this.goToPreviousPage }}>Previous</a>
+        <a class="pagination-next" {{on "click" this.goToNextPage }}>Next page</a>
         <ul class="pagination-list">
             {{#unless this.isFirstPage}}
             <li>
-                <a href="#" class="pagination-link" aria-label="Goto page 1" {{on "click" (fn this.goToPage 1) }}>1</a>
+                <a class="pagination-link" aria-label="Goto page 1" {{on "click" (fn this.goToPage 1) }}>1</a>
             </li>
             <li>
                 <span class="pagination-ellipsis">&hellip;</span>
@@ -45,7 +45,7 @@
                 <span class="pagination-ellipsis">&hellip;</span>
             </li>
             <li>
-                <a href="#" class="pagination-link" aria-label="Goto page {{@model.meta.total_pages}}" {{on "click" (fn
+                <a class="pagination-link" aria-label="Goto page {{@model.meta.total_pages}}" {{on "click" (fn
                     this.goToPage @model.meta.total_pages) }}>{{@model.meta.total_pages}}</a>
             </li>
             {{/unless }}

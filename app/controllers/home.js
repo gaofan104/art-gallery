@@ -22,18 +22,16 @@ export default class HomeController extends Controller {
 
     @action
     goToPage(page) {
-        // this.router.replaceWith('home', { queryParams: { page: page } });
+        this.page = page;
     }
 
     @action
     goToPreviousPage() {
-        // this.router.replaceWith('home', { queryParams: { page: this.get('model').meta.current_page - 1 } });
+        this.page = Math.max(1, this.page - 1);
     }
 
     @action
     goToNextPage() {
-        // console.log(this.get('model').meta.current_page)
-        // this.router.transitionTo('home', { queryParams: { page: this.get('model').meta.current_page + 1 } });
-        this.set('page', this.page + 1)
+        this.page = Math.min(this.model.meta.total_pages, this.page + 1);
     }
 }
